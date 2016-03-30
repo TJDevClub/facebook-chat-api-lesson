@@ -39,6 +39,7 @@ function authenticate(credentials){//where credentials is the user's credentials
 			//put your message handling code here
 			
 			console.log("Got a message from",message.senderName,":",message.body)
+			api.sendMessage(message.body.toUpperCase(), message.threadID)
 
 		})
 

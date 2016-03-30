@@ -25,7 +25,8 @@ function authenticate(credentials){//where credentials is the user's credentials
 		console.log("Logged in as " + credentials.email)//we've authenticated
 
 		api.setOptions({
-			logLevel: "silent"
+			logLevel: "silent",
+			//selfListen: true //uncomment this line if you want messages from yourself to be passed to the `api.listen` function - defaults to false so we don't get caught in a painful loop
 		})
 
 		api.listen(function(err, message) {//this function is called whenever we get a message
